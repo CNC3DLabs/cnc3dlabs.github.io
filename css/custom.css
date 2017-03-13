@@ -373,3 +373,17 @@
 .tdp_sh_detail_add_resp{
 	margin-top: 15px;
 }
+.tdp_sh_add_param_header{
+	color: gray;
+}
+.tdp_sh_add_param_help{
+	font-size: 0.85em;
+}
+.tdp_sh_add_param_label{
+	padding-top: 5px;
+	text-align: right;
+}
+.tdp_sh_add_param_nm{
+	background-color: #EDF2F7;
+	box-shadow:0 0 0 1px gray inset;
+}
