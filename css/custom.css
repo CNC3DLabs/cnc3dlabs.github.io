@@ -1,4 +1,5 @@
-.tdp-menu{	background-color: #00001A;
+.tdp-menu{
+	background-color: #00001A;
 	}
 
 .tdp-menu-button{
@@ -58,11 +59,13 @@
 	color: white;
 	border-radius: 0px;
 	}
-.tdp-logo-main{	background-color: #0099DF;
+.tdp-logo-main{
+	background-color: #0099DF;
 	color: white;
 	background: url(../IMG/logo-main-back.jpg) 10% 10% no-repeat;
 	}
-.tdp-reg-button{	border: 1px solid white;
+.tdp-reg-button{
+	border: 1px solid white;
 	background: transparent;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -155,7 +158,8 @@
     height: 50px;
 }
 
-.tdp-navbar-left {	margin-left: 10px;
+.tdp-navbar-left {
+	margin-left: 10px;
 }
 
 
@@ -170,7 +174,9 @@
 	min-width: 320px;
 	}
 
-.tdp-chat-date{	color: gray;	font-size: 0.7em;
+.tdp-chat-date{
+	color: gray;
+	font-size: 0.7em;
 	}
 .tdp-chat-list{
 	padding-top: 5px;
@@ -182,7 +188,8 @@
 
 
 
-.tdp-menu-button-badge{	margin-left: 0px;
+.tdp-menu-button-badge{
+	margin-left: 0px;
 	margin-top: -3px;
 	background-color: orange;
 	}
@@ -230,12 +237,14 @@
 
 
 
-.tdp_sh_adv_big{	box-shadow:0 0 0 1px #e5e5e5 inset;
+.tdp_sh_adv_big{
+	box-shadow:0 0 0 1px #e5e5e5 inset;
 }
 .tdp_sh_adv_big:hover{
 	box-shadow:0 0 0 1px #23475F inset;
 }
-.tdp_sh_adv_big_price_zone{	padding-top: 10%;
+.tdp_sh_adv_big_price_zone{
+	padding-top: 10%;
 }
 .tdp_sh_adv_big_price{
 	font-style: italic;
@@ -253,7 +262,8 @@
 .tdp_sh_adv_usual{
 	box-shadow:0 0 0 1px #e5e5e5 inset;
 }
-.tdp_sh_frame_usual{	padding-bottom: 20px;
+.tdp_sh_frame_usual{
+	padding-bottom: 20px;
 	box-shadow:0 0 0 1px #e5e5e5 inset;
 }
 .tdp_sh_mark_usual{
@@ -275,12 +285,14 @@
 	color: gray;
     height: 70px;
 }
-.tdp_sh_object_usual{	box-shadow:0 0 0 1px #e5e5e5 inset;
+.tdp_sh_object_usual{
+	box-shadow:0 0 0 1px #e5e5e5 inset;
 }
 .tdp_sh_object_usual:hover{
 	box-shadow:0 0 0 1px #23475F inset;
 }
-.tdp_sh_ratio_usual{	text-align: center;
+.tdp_sh_ratio_usual{
+	text-align: center;
 	font-size: 0.9em;
 	color: gray;
 }
@@ -342,7 +354,9 @@
 
 
 
-.tdp_sh_adv_add_object_btn{	margin-top: 35%;    height: 70px;
+.tdp_sh_adv_add_object_btn{
+	margin-top: 35%;
+    height: 70px;
 	font-size: 3em;
 }
 .tdp_sh_adv_add_object_msg{
@@ -350,9 +364,11 @@
 	padding-right: 10px;
 	background-color: #EDF2F7;
 }
-.tdp_sh_menu_category{	font-size: 1em;
+.tdp_sh_menu_category{
+	font-size: 1em;
 }
-.tdp_sh_menu_subcategory{	font-size: 0.8em;
+.tdp_sh_menu_subcategory{
+	font-size: 0.8em;
 	font-style: italic;
 }
 .tdp_sh_category_btn{
@@ -380,14 +396,33 @@
 	font-size: 0.85em;
 }
 .tdp_sh_add_param_label{
-	padding-top: 5px;
 	text-align: right;
 }
 .tdp_sh_add_param_nm{
 	background-color: #EDF2F7;
 	box-shadow:0 0 0 1px gray inset;
 }
-.tdp_sh_main_img{	max-width: 410px;
+.tdp_sh_main_img{
+	max-width: 410px;
 	max-height: 400px;
-	box-shadow:0 0 0 1px gray inset;
+}
+.tdp_sh_fo_dd{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.tdp_sh_fo_label{
+	width: 180px;
+	height: 50px;
+	border-radius: 4px;
+	text-align: center;
+	cursor: pointer;
+	display: block;
+	font: 14px/50px Tahoma;
+	transition: all 0.18s ease-in-out;
+	border: 1px solid #333;
+	color: #333;	
 }
