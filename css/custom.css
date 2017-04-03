@@ -387,3 +387,7 @@
 	background-color: #EDF2F7;
 	box-shadow:0 0 0 1px gray inset;
 }
+.tdp_sh_main_img{	max-width: 410px;
+	max-height: 400px;
+	box-shadow:0 0 0 1px gray inset;
+}

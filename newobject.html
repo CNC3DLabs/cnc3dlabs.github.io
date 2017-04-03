@@ -92,7 +92,7 @@
 					<label class="tdp_sh_add_param_label">Название</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-6">
-					<input type="text" class="form-control" id="exampleInputName2" placeholder="Название товара">
+					<input type="text" class="form-control" id="tdp_sh_obj_name" placeholder="Название товара" onChange="tdp_sh_form_obj_link('tdp_sh_obj_name')">
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6">
 			        <div class="alert alert-info tdp_sh_add_param_help" role="alert">
@@ -135,11 +135,15 @@
 					<label class="tdp_sh_add_param_label">Основное фото</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-6">
-					<input type="text" class="form-control" id="exampleInputName2" placeholder="Основное фото">
+					<input type="text" class="form-control" id="tdp_sh_main_image_path" placeholder="Основное фото" onChange="tdp_sh_add_main_image('tdp_sh_main_image_path')">
+					<br>
+					<img src="" class="img-responsive tdp_sh_main_img" id="tdp_sh_main_image" alt="Main Image">
+					<br>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6">
 			        <div class="alert alert-info tdp_sh_add_param_help" role="alert">
 			        	<p>Показывается на всех элементах отображения магазина</p>
+			        	<p>Вставьте ссылку на картинку из любого доступного хостинка: Google, VK, FB и прочих.</p>
 			        	<p><strong>Не менее 200х200 пикселей!</strong></p>
 		        	</div>
 				</div>
@@ -149,7 +153,26 @@
 					<label class="tdp_sh_add_param_label">Дополнительные фото</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-6">
-					<input type="text" class="form-control" id="exampleInputName2" placeholder="Дополнительные фото">
+					<input type="text" class="form-control" id="tdp_sh_ext_image_path1" placeholder="Дополнительное фото 1" onChange="tdp_sh_add_ext_image('1')">
+					<br>
+					<img src="" class="img-responsive tdp_sh_main_img" id="tdp_sh_ext_image1" alt="Main Image">
+					<br>
+					<input type="text" class="form-control" id="tdp_sh_ext_image_path2" placeholder="Дополнительное фото 2" onChange="tdp_sh_add_ext_image('2')">
+					<br>
+					<img src="" class="img-responsive tdp_sh_main_img" id="tdp_sh_ext_image2" alt="Main Image">
+					<br>
+					<input type="text" class="form-control" id="tdp_sh_ext_image_path3" placeholder="Дополнительное фото 3" onChange="tdp_sh_add_ext_image('3')">
+					<br>
+					<img src="" class="img-responsive tdp_sh_main_img" id="ttdp_sh_ext_image3" alt="Main Image">
+					<br>
+					<input type="text" class="form-control" id="tdp_sh_ext_image_path4" placeholder="Дополнительное фото 4" onChange="tdp_sh_add_ext_image('4')">
+					<br>
+					<img src="" class="img-responsive tdp_sh_main_img" id="tdp_sh_ext_image4" alt="Main Image">
+					<br>
+					<input type="text" class="form-control" id="tdp_sh_ext_image_path5" placeholder="Дополнительное фото 5" onChange="tdp_sh_add_ext_image('5')">
+					<br>
+					<img src="" class="img-responsive tdp_sh_main_img" id="tdp_sh_ext_image5" alt="Main Image">
+					<br>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6">
 			        <div class="alert tdp_sh_add_param_help tdp_sh_add_param_nm" role="alert">
@@ -277,7 +300,7 @@
 
         	<div class="row" id="tdp_sh_add_row">
 				<div class="col-md-2 col-sm-2 col-xs-6">
-			        <button type="button" class="btn btn-success btn-sm" id="tdp_sh_btn_add_param" onClick="tdp_sh_add_param('tdp_sh_params_dimentions')"><strong>add</strong></button>
+			        <button type="button" class="btn btn-success btn-sm" id="tdp_sh_btn_add_param" data-toggle="modal" data-target="#tdp_sh_add_param_modal"><strong>add</strong></button>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-6">
 				</div>
@@ -289,28 +312,68 @@
 			</div>
 
 
+			<div class="modal fade" id="tdp_sh_add_param_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">Дополнительные параметры</h4>
+			      </div>
+			      <div class="modal-body">
+			        <button type="button" class="btn btn-default" data-dismiss="modal" onClick="tdp_sh_add_param('tdp_sh_params_dimentions')">Размер</button><br>
+			        <button type="button" class="btn btn-default" data-dismiss="modal" onClick="tdp_sh_add_param('tdp_sh_params_material')">Материал</button><br>
+			        <button type="button" class="btn btn-default" data-dismiss="modal" onClick="tdp_sh_add_param('tdp_sh_params_soplo')">Диаметр сопла</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+
 
 				<script type="text/javascript">
-
 				function tdp_sh_del_param(param_id) {
-				document.getElementById(param_id).style.display = "none";
+					document.getElementById(param_id).style.display = "none";
 				}
+
 				function tdp_sh_add_param(param_id) {
-				document.getElementById(param_id).style.display = "block ";
+					document.getElementById(param_id).style.display = "block ";
+				}
+				function tdp_sh_add_main_image(param_id) {					var val = document.getElementById(param_id).value;
+					document.getElementById("tdp_sh_main_image").src = val;
+				}
+				function tdp_sh_add_ext_image(param_num) {//					alert
+					var val = document.getElementById("tdp_sh_ext_image_path"+param_num).value;
+					document.getElementById("tdp_sh_ext_image"+param_num).src = val;
+				}
+				function tdp_sh_translit(str) {
+				    var space = '-';
+				    var link = '';
+				    var transl = {
+				        'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'e', 'ж': 'zh',
+				        'з': 'z', 'и': 'i', 'й': 'j', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n',
+				        'о': 'o', 'п': 'p', 'р': 'r','с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'h',
+				        'ц': 'c', 'ч': 'ch', 'ш': 'sh', 'щ': 'sh','ъ': space,
+				        'ы': 'y', 'ь': space, 'э': 'e', 'ю': 'yu', 'я': 'ya'
+				    }
+					if (str != '')
+					    str = str.toLowerCase();
+
+					for (var i = 0; i < str.length; i++){
+					    if (/[а-яё]/.test(str.charAt(i))){ // заменяем символы на русском
+					        link += transl[str.charAt(i)];
+					    } else if (/[a-z0-9]/.test(str.charAt(i))){ // символы на анг. оставляем как есть
+					        link += str.charAt(i);
+					    } else {
+					        if (link.slice(-1) !== space) link += space; // прочие символы заменяем на space
+					    }
+					}
+				    return link;
+				}
+				function tdp_sh_form_obj_link(param_id) {
+					var val = document.getElementById(param_id).value;
+					document.getElementById("tdp_sh_obj_link").value = tdp_sh_translit(val);
 				}
 
-
-/*					document.getElementById('tdp_sh_btn_add_param').onclick = function()
-					{
-				//		var div = document.createElement('div');
-				//		div.className = "row";
-				//		div.idName = "tdp_sh_param_1";
-				//		document.getElementById('tdp_sh_params_block').appendChild(div);
-                       var div = document.getElementById('tdp_sh_params_dimentions');
-                       div.style.display = "none"
-
-				//    	document.getElementById('tdp_sh_btn_add_param').submit();
-					}*/
 				</script>
 
 
@@ -323,7 +386,7 @@
 					<label class="tdp_sh_add_param_label">Название транслитом</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-6">
-					<input type="text" class="form-control" id="exampleInputName2" placeholder="Nazvanie_translitom">
+					<input type="text" class="form-control" id="tdp_sh_obj_link" placeholder="Nazvanie_translitom">
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6">
 			        <div class="alert alert-info tdp_sh_add_param_help" role="alert">
