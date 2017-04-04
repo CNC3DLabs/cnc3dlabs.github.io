@@ -246,9 +246,13 @@
 			<hr>
         	<div class="row" id="tdp_sh_params_dimentions">
 				<div class="col-md-8 col-sm-8 col-xs-12">
-			        <button type="button" class="btn btn-danger btn-sm" onClick="tdp_sh_del_param('tdp_sh_params_dimentions')"><strong>del</strong></button>
 					<label class="tdp_sh_add_param_label">Размер</label>
-					<input type="text" class="form-control" id="exampleInputName2" placeholder="10х100х30">
+					<div class="input-group">
+				    	<span class="input-group-btn">
+					        <button type="button" class="btn btn-danger" onClick="tdp_sh_del_param('tdp_sh_params_dimentions')"><strong>del</strong></button>
+				    	</span>
+						<input type="text" class="form-control" id="exampleInputName2" placeholder="10х100х30">
+				    </div>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6">
 			        <div class="alert tdp_sh_add_param_help tdp_sh_add_param_nm" role="alert">
@@ -259,26 +263,35 @@
 			</div>
         	<div class="row" id="tdp_sh_params_material" style="display: none">
 				<div class="col-md-8 col-sm-8 col-xs-12">
-			        <button type="button" class="btn btn-danger btn-sm" onClick="tdp_sh_del_param('tdp_sh_params_material')"><strong>del</strong></button>
 					<label class="tdp_sh_add_param_label">Материал</label>
-					<input type="text" class="form-control" id="exampleInputName2" placeholder="ABS">
+					<div class="input-group">
+				    	<span class="input-group-btn">
+					        <button type="button" class="btn btn-danger" onClick="tdp_sh_del_param('tdp_sh_params_material')"><strong>del</strong></button>
+				    	</span>
+						<input type="text" class="form-control" id="exampleInputName2" placeholder="ABS">
+				    </div>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6">
 			        <div class="alert tdp_sh_add_param_help tdp_sh_add_param_nm" role="alert">
-			        	<p>Результирующие размеры товара</p>
+			        	<p>Требуемый для печати товара материал</p>
 			        	<p><strong>Не обязательный параметр!</strong></p>
 		        	</div>
 				</div>
 			</div>
         	<div class="row" id="tdp_sh_params_soplo"  style="display: none">
 				<div class="col-md-8 col-sm-8 col-xs-12">
-			        <button type="button" class="btn btn-danger btn-sm" onClick="tdp_sh_del_param('tdp_sh_params_soplo')"><strong>del</strong></button>
 					<label class="tdp_sh_add_param_label">Диаметр сопла</label>
-					<input type="text" class="form-control" id="exampleInputName2" placeholder="0,4 мм">
+					<div class="input-group">
+				    	<span class="input-group-btn">
+					        <button type="button" class="btn btn-danger" onClick="tdp_sh_del_param('tdp_sh_params_soplo')"><strong>del</strong></button>
+				    	</span>
+						<input type="text" class="form-control" id="exampleInputName2" placeholder="0,4 мм">
+				    </div>
+
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6">
 			        <div class="alert tdp_sh_add_param_help tdp_sh_add_param_nm" role="alert">
-			        	<p>Результирующие размеры товара</p>
+			        	<p>Требуемый для достижения максимального качества размер сопла принтера</p>
 			        	<p><strong>Не обязательный параметр!</strong></p>
 		        	</div>
 				</div>
@@ -307,8 +320,8 @@
 			        <h4 class="modal-title" id="myModalLabel">Дополнительные параметры</h4>
 			      </div>
 			      <div class="modal-body">
-			        <button type="button" class="btn btn-default" data-dismiss="modal" onClick="tdp_sh_add_param('tdp_sh_params_dimentions')">Размер</button><br>
-			        <button type="button" class="btn btn-default" data-dismiss="modal" onClick="tdp_sh_add_param('tdp_sh_params_material')">Материал</button><br>
+			        <button type="button" class="btn btn-default" data-dismiss="modal" onClick="tdp_sh_add_param('tdp_sh_params_dimentions')">Размер</button><br><br>
+			        <button type="button" class="btn btn-default" data-dismiss="modal" onClick="tdp_sh_add_param('tdp_sh_params_material')">Материал</button><br><br>
 			        <button type="button" class="btn btn-default" data-dismiss="modal" onClick="tdp_sh_add_param('tdp_sh_params_soplo')">Диаметр сопла</button>
 			      </div>
 			    </div>
@@ -317,61 +330,6 @@
 
 
 
-				<script type="text/javascript">
-
-				$('.tdp_sh_fo_dd').change(function() {
-				    if ($(this).val() != '') document.getElementById("tdp_sh_file_path").value = $(this).val();
-				});
-/*				function tdp_sh_fo_dlg() {
-					$('#tdp_sh_fo_dialog').click();
-					alert( "ok." );
-				}*/
-				function tdp_sh_del_param(param_id) {
-					document.getElementById(param_id).style.display = "none";
-				}
-
-				function tdp_sh_add_param(param_id) {
-					document.getElementById(param_id).style.display = "block ";
-				}
-				function tdp_sh_add_main_image(param_id) {
-					var val = document.getElementById(param_id).value;
-					document.getElementById("tdp_sh_main_image").src = val;
-				}
-				function tdp_sh_add_ext_image(param_num) {
-//					alert
-					var val = document.getElementById("tdp_sh_ext_image_path"+param_num).value;
-					document.getElementById("tdp_sh_ext_image"+param_num).src = val;
-				}
-				function tdp_sh_translit(str) {
-				    var space = '-';
-				    var link = '';
-				    var transl = {
-				        'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'e', 'ж': 'zh',
-				        'з': 'z', 'и': 'i', 'й': 'j', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n',
-				        'о': 'o', 'п': 'p', 'р': 'r','с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'h',
-				        'ц': 'c', 'ч': 'ch', 'ш': 'sh', 'щ': 'sh','ъ': space,
-				        'ы': 'y', 'ь': space, 'э': 'e', 'ю': 'yu', 'я': 'ya'
-				    }
-					if (str != '')
-					    str = str.toLowerCase();
-
-					for (var i = 0; i < str.length; i++){
-					    if (/[а-яё]/.test(str.charAt(i))){ // заменяем символы на русском
-					        link += transl[str.charAt(i)];
-					    } else if (/[a-z0-9]/.test(str.charAt(i))){ // символы на анг. оставляем как есть
-					        link += str.charAt(i);
-					    } else {
-					        if (link.slice(-1) !== space) link += space; // прочие символы заменяем на space
-					    }
-					}
-				    return link;
-				}
-				function tdp_sh_form_obj_link(param_id) {
-					var val = document.getElementById(param_id).value;
-					document.getElementById("tdp_sh_obj_link").value = tdp_sh_translit(val);
-				}
-
-				</script>
 
 
 
@@ -405,9 +363,101 @@
 
 			<h2 class="tdp_sh_add_param_header">Параметры для поиска</h2>
 			<hr>
+
+        	<div class="row" id="tdp_sh_srch_key1"  style="display: none">
+				<div class="col-md-8 col-sm-8 col-xs-12">
+					<label class="tdp_sh_add_param_label">Ключ 1</label>
+					<div class="input-group">
+				    	<span class="input-group-btn">
+					        <button type="button" class="btn btn-danger" onClick="tdp_sh_del_param('tdp_sh_srch_key1')"><strong>del</strong></button>
+				    	</span>
+						<input type="text" class="form-control" id="exampleInputName2" placeholder="">
+				    </div>
+
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-6">
+			        <div class="alert tdp_sh_add_param_help tdp_sh_add_param_nm" role="alert">
+			        	<p>Ключ для поиска товара в системе</p>
+			        	<p><strong>Не обязательный параметр!</strong></p>
+		        	</div>
+				</div>
+			</div>
+        	<div class="row" id="tdp_sh_srch_key2"  style="display: none">
+				<div class="col-md-8 col-sm-8 col-xs-12">
+					<label class="tdp_sh_add_param_label">Ключ 2</label>
+					<div class="input-group">
+				    	<span class="input-group-btn">
+					        <button type="button" class="btn btn-danger" onClick="tdp_sh_del_param('tdp_sh_srch_key2')"><strong>del</strong></button>
+				    	</span>
+						<input type="text" class="form-control" id="exampleInputName2" placeholder="">
+				    </div>
+
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-6">
+			        <div class="alert tdp_sh_add_param_help tdp_sh_add_param_nm" role="alert">
+			        	<p>Ключ для поиска товара в системе</p>
+			        	<p><strong>Не обязательный параметр!</strong></p>
+		        	</div>
+				</div>
+			</div>
+        	<div class="row" id="tdp_sh_srch_key3"  style="display: none">
+				<div class="col-md-8 col-sm-8 col-xs-12">
+					<label class="tdp_sh_add_param_label">Ключ 3</label>
+					<div class="input-group">
+				    	<span class="input-group-btn">
+					        <button type="button" class="btn btn-danger" onClick="tdp_sh_del_param('tdp_sh_srch_key3')"><strong>del</strong></button>
+				    	</span>
+						<input type="text" class="form-control" id="exampleInputName2" placeholder="">
+				    </div>
+
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-6">
+			        <div class="alert tdp_sh_add_param_help tdp_sh_add_param_nm" role="alert">
+			        	<p>Ключ для поиска товара в системе</p>
+			        	<p><strong>Не обязательный параметр!</strong></p>
+		        	</div>
+				</div>
+			</div>
+        	<div class="row" id="tdp_sh_srch_key4"  style="display: none">
+				<div class="col-md-8 col-sm-8 col-xs-12">
+					<label class="tdp_sh_add_param_label">Ключ 4</label>
+					<div class="input-group">
+				    	<span class="input-group-btn">
+					        <button type="button" class="btn btn-danger" onClick="tdp_sh_del_param('tdp_sh_srch_key4')"><strong>del</strong></button>
+				    	</span>
+						<input type="text" class="form-control" id="exampleInputName2" placeholder="">
+				    </div>
+
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-6">
+			        <div class="alert tdp_sh_add_param_help tdp_sh_add_param_nm" role="alert">
+			        	<p>Ключ для поиска товара в системе</p>
+			        	<p><strong>Не обязательный параметр!</strong></p>
+		        	</div>
+				</div>
+			</div>
+        	<div class="row" id="tdp_sh_srch_key5"  style="display: none">
+				<div class="col-md-8 col-sm-8 col-xs-12">
+					<label class="tdp_sh_add_param_label">Ключ 5</label>
+					<div class="input-group">
+				    	<span class="input-group-btn">
+					        <button type="button" class="btn btn-danger" onClick="tdp_sh_del_param('tdp_sh_srch_key5')"><strong>del</strong></button>
+				    	</span>
+						<input type="text" class="form-control" id="exampleInputName2" placeholder="">
+				    </div>
+
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-6">
+			        <div class="alert tdp_sh_add_param_help tdp_sh_add_param_nm" role="alert">
+			        	<p>Ключ для поиска товара в системе</p>
+			        	<p><strong>Не обязательный параметр!</strong></p>
+		        	</div>
+				</div>
+			</div>
+
         	<div class="row">
 				<div class="col-md-2 col-sm-2 col-xs-6">
-			        <button type="button" class="btn btn-success btn-sm"><strong>add</strong></button>
+			        <button type="button" class="btn btn-success btn-sm" onClick="tdp_sh_add_srch_key()"><strong>add</strong></button>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-6">
 				</div>
@@ -515,4 +565,82 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
 		<script type="text/javascript">
 			VK.Widgets.Like("vk_like", {type: "button"});
 		</script>   </div></div>
+				<script type="text/javascript">
+
+				$('.tdp_sh_fo_dd').change(function() {
+				    if ($(this).val() != '') document.getElementById("tdp_sh_file_path").value = $(this).val();
+				});
+/*				function tdp_sh_fo_dlg() {
+					$('#tdp_sh_fo_dialog').click();
+					alert( "ok." );
+				}*/
+				function tdp_sh_del_param(param_id) {
+					document.getElementById(param_id).style.display = "none";
+				}
+
+				function tdp_sh_add_param(param_id) {
+					document.getElementById(param_id).style.display = "block";
+				}
+				function tdp_sh_add_srch_key() {
+					if(document.getElementById("tdp_sh_srch_key1").style.display != "block") {
+						document.getElementById("tdp_sh_srch_key1").style.display = "block";
+						return false;
+					}
+					if(document.getElementById("tdp_sh_srch_key2").style.display != "block") {
+						document.getElementById("tdp_sh_srch_key2").style.display = "block";
+						return false;
+					}
+					if(document.getElementById("tdp_sh_srch_key3").style.display != "block") {
+						document.getElementById("tdp_sh_srch_key3").style.display = "block";
+						return false;
+					}
+					if(document.getElementById("tdp_sh_srch_key4").style.display != "block") {
+						document.getElementById("tdp_sh_srch_key4").style.display = "block";
+						return false;
+					}
+					if(document.getElementById("tdp_sh_srch_key5").style.display != "block") {
+						document.getElementById("tdp_sh_srch_key5").style.display = "block";
+						return false;
+					}
+				}
+				function tdp_sh_add_main_image(param_id) {
+					var val = document.getElementById(param_id).value;
+					document.getElementById("tdp_sh_main_image").src = val;
+				}
+				function tdp_sh_add_ext_image(param_num) {
+//					alert
+					var val = document.getElementById("tdp_sh_ext_image_path"+param_num).value;
+					document.getElementById("tdp_sh_ext_image"+param_num).src = val;
+				}
+				function tdp_sh_translit(str) {
+				    var space = '-';
+				    var link = '';
+				    var transl = {
+				        'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'e', 'ж': 'zh',
+				        'з': 'z', 'и': 'i', 'й': 'j', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n',
+				        'о': 'o', 'п': 'p', 'р': 'r','с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'h',
+				        'ц': 'c', 'ч': 'ch', 'ш': 'sh', 'щ': 'sh','ъ': space,
+				        'ы': 'y', 'ь': space, 'э': 'e', 'ю': 'yu', 'я': 'ya'
+				    }
+					if (str != '')
+					    str = str.toLowerCase();
+
+					for (var i = 0; i < str.length; i++){
+					    if (/[а-яё]/.test(str.charAt(i))){ // заменяем символы на русском
+					        link += transl[str.charAt(i)];
+					    } else if (/[a-z0-9]/.test(str.charAt(i))){ // символы на анг. оставляем как есть
+					        link += str.charAt(i);
+					    } else {
+					        if (link.slice(-1) !== space) link += space; // прочие символы заменяем на space
+					    }
+					}
+				    return link;
+				}
+				function tdp_sh_form_obj_link(param_id) {
+					var val = document.getElementById(param_id).value;
+					document.getElementById("tdp_sh_obj_link").value = tdp_sh_translit(val);
+				}
+
+				</script>
+
 </body></html>
