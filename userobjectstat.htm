@@ -83,8 +83,8 @@
 		<li role="presentation"><a href="https://cnc3d-printer.com/index.php?SUBMIT=usinfo&amp;LM=1">Сообщения</a></li>
 		<li role="presentation"><a href="https://cnc3d-printer.com/index.php?SUBMIT=usinfo&amp;LM=1">Принтеры</a></li>
 		<li role="presentation" class="active"><a href="https://cnc3d-printer.com/index.php?SUBMIT=usinfo&amp;LM=1">Товары</a></li>
-		<li role="presentation"><a href="https://cnc3d-printer.com/index.php?SUBMIT=usinfo&amp;LM=1">Заявки</a></li>
-		<li role="presentation"><a href="https://cnc3d-printer.com/index.php?SUBMIT=usinfo&amp;LM=1">Статьи</a></li>
+		<li role="presentation" class="disabled"><a href="https://cnc3d-printer.com/index.php?SUBMIT=usinfo&amp;LM=1">Заявки</a></li>
+		<li role="presentation" class="disabled"><a href="https://cnc3d-printer.com/index.php?SUBMIT=usinfo&amp;LM=1">Статьи</a></li>
 	</ul>
 </div>
 <br>
@@ -155,8 +155,14 @@
 <br>
 <br>
 <div class="row">
-	<div class="col-sm-6 col-xs-12">
+	<p class="lead tdp-lead-text">Ваши товары</p>
+</div>
+<div class="row">
+	<div class="col-sm-6 col-xs-12 tdp_sh_obj_user">
 		<div class="media">
+			<div class="media-left  media-middle">
+				<button type="button" class="btn btn-danger btn-sm" onClick="tdp_sh_del_obj()"><strong>del</strong></button>
+			</div>
 			<div class="media-left">
 		    	<a href="#">
 		      		<img class="media-object img-responsive tdp_sh_obj_preview" src="img/logo.jpg" alt="...">
@@ -168,8 +174,11 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-6 col-xs-12">
+	<div class="col-sm-6 col-xs-12 tdp_sh_obj_user">
 		<div class="media">
+			<div class="media-left  media-middle">
+				<button type="button" class="btn btn-danger btn-sm" onClick="tdp_sh_del_obj()"><strong>del</strong></button>
+			</div>
 			<div class="media-left">
 		    	<a href="#">
 		      		<img class="media-object img-responsive tdp_sh_obj_preview" src="img/logo.jpg" alt="...">
@@ -181,8 +190,27 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-6 col-xs-12">
+	<div class="col-sm-6 col-xs-12 tdp_sh_obj_user">
 		<div class="media">
+			<div class="media-left  media-middle">
+				<button type="button" class="btn btn-danger btn-sm" onClick="tdp_sh_del_obj()"><strong>del</strong></button>
+			</div>
+			<div class="media-left">
+		    	<a href="#">
+		      		<img class="media-object img-responsive tdp_sh_obj_preview" src="https://cnc3d-printer.com/UserImages/UID_5690d2/3D-принтер/InssTek 1.jpg" alt="...">
+			    </a>
+			</div>
+			<div class="media-body">
+				<h4 class="media-heading"><a href="#">Кнопка на дрель MAKITA</a></h4>
+				<p>Очень краткое описание объекта</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-6 col-xs-12 tdp_sh_obj_user">
+		<div class="media">
+			<div class="media-left  media-middle">
+				<button type="button" class="btn btn-danger btn-sm" onClick="tdp_sh_del_obj()"><strong>del</strong></button>
+			</div>
 			<div class="media-left">
 		    	<a href="#">
 		      		<img class="media-object img-responsive tdp_sh_obj_preview" src="img/logo.jpg" alt="...">
@@ -194,21 +222,11 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-6 col-xs-12">
+	<div class="col-sm-6 col-xs-12 tdp_sh_obj_user">
 		<div class="media">
-			<div class="media-left">
-		    	<a href="#">
-		      		<img class="media-object img-responsive tdp_sh_obj_preview" src="img/logo.jpg" alt="...">
-			    </a>
+			<div class="media-left  media-middle">
+				<button type="button" class="btn btn-danger btn-sm" onClick="tdp_sh_del_obj()"><strong>del</strong></button>
 			</div>
-			<div class="media-body">
-				<h4 class="media-heading"><a href="#">Кнопка на дрель MAKITA</a></h4>
-				<p>Очень краткое описание объекта</p>
-			</div>
-		</div>
-	</div>
-	<div class="col-sm-6 col-xs-12">
-		<div class="media">
 			<div class="media-left">
 		    	<a href="#">
 		      		<img class="media-object img-responsive tdp_sh_obj_preview" src="img/logo.jpg" alt="...">
@@ -221,7 +239,10 @@
 		</div>
 	</div>
 </div>
-
+<br>
+<div class="row">
+	<button type="button" class="btn btn-success">Добавить товар</button>
+</div>
 </div>
 
 <hr>

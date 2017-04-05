@@ -426,6 +426,17 @@
 	border: 1px solid #333;
 	color: #333;
 }
-.tdp_sh_btn_act{	border-bottom: 2px solid #337ab7;}
-.tdp_sh_obj_preview{	max-width: 100px;
-	main-width: 70px;}
+.tdp_sh_btn_act{
+	border-bottom: 2px solid #337ab7;
+}
+.tdp_sh_obj_preview{
+	max-width: 100px;
+	main-width: 70px;
+}
+.tdp_sh_obj_user{
+	margin-bottom: 15px;
+}
+.tdp_sh_usr_cmt{
+	max-width: 50px;
+	main-width: 50px;
+}
